@@ -12,9 +12,9 @@ var operators_1 = require("rxjs/operators");
 var utils = __importStar(require("./utils"));
 var TraverseOrder;
 (function (TraverseOrder) {
-    TraverseOrder["inorder"] = "_traverseOrdered";
-    TraverseOrder["preorder"] = "_traversePreOrder";
-    TraverseOrder["postorder"] = "_traversePostOrder";
+    TraverseOrder["IN"] = "_traverseOrdered";
+    TraverseOrder["PRE"] = "_traversePreOrder";
+    TraverseOrder["POST"] = "_traversePostOrder";
 })(TraverseOrder = exports.TraverseOrder || (exports.TraverseOrder = {}));
 exports.traverse = function (order) {
     return rxjs_1.pipe(operators_1.map(function (state) { return state._root; }), operators_1.map(function (node) {

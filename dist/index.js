@@ -39,7 +39,7 @@ var ReactiveBST = /** @class */ (function (_super) {
         this.dispatch(new actions_1.Remove({ value: value }));
     };
     ReactiveBST.prototype.traverse$ = function (order) {
-        if (order === void 0) { order = selectors_1.TraverseOrder.inorder; }
+        if (order === void 0) { order = selectors_1.TraverseOrder.IN; }
         return this.state$.pipe(selectors_1.traverse(order));
     };
     ReactiveBST.prototype.find$ = function (value) {

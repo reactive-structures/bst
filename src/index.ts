@@ -32,7 +32,7 @@ export class ReactiveBST extends Store<BST> {
     this.dispatch(new Remove({ value }));
   }
 
-  traverse$(order: TraverseOrder = TraverseOrder.inorder) {
+  traverse$(order: TraverseOrder = TraverseOrder.IN) {
     return this.state$.pipe(traverse(order));
   }
 

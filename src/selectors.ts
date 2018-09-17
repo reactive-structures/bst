@@ -4,9 +4,9 @@ import { BST, BSTNode } from './models';
 import * as utils from './utils';
 
 export enum TraverseOrder {
-  inorder = '_traverseOrdered',
-  preorder = '_traversePreOrder',
-  postorder = '_traversePostOrder'
+  IN = '_traverseOrdered',
+  PRE = '_traversePreOrder',
+  POST = '_traversePostOrder'
 }
 
 export const traverse = (order: TraverseOrder) =>
