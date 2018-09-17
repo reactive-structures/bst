@@ -1,7 +1,7 @@
 import { Store } from '@reactive-redux/store';
 import { BST, BSTNode } from './models';
-import { TraverseOrderEnum } from './selectors';
-export { TraverseOrderEnum } from './selectors';
+import { TraverseOrder } from './selectors';
+export { TraverseOrder } from './selectors';
 export declare class ReactiveBST extends Store<BST> {
     private rootValue;
     max$: import("rxjs/internal/Observable").Observable<BSTNode>;
@@ -11,6 +11,6 @@ export declare class ReactiveBST extends Store<BST> {
     constructor(rootValue?: number);
     insert(value: number): void;
     delete(value: number): void;
-    traverse$(order?: TraverseOrderEnum): import("rxjs/internal/Observable").Observable<BSTNode[]>;
+    traverse$(order?: TraverseOrder): import("rxjs/internal/Observable").Observable<BSTNode[]>;
     find$(value: number): import("rxjs/internal/Observable").Observable<BSTNode>;
 }

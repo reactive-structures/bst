@@ -3,13 +3,13 @@ import { map, filter, distinctUntilChanged } from 'rxjs/operators';
 import { BST, BSTNode } from './models';
 import * as utils from './utils';
 
-export enum TraverseOrderEnum {
+export enum TraverseOrder {
   inorder = '_traverseOrdered',
   preorder = '_traversePreOrder',
   postorder = '_traversePostOrder'
 }
 
-export const traverse = (order: TraverseOrderEnum) =>
+export const traverse = (order: TraverseOrder) =>
   pipe(
     map((state: BST) => state._root),
     map(node => {

@@ -19,7 +19,7 @@ var reducers_1 = require("./reducers");
 var actions_1 = require("./actions");
 var selectors_1 = require("./selectors");
 var selectors_2 = require("./selectors");
-exports.TraverseOrderEnum = selectors_2.TraverseOrderEnum;
+exports.TraverseOrder = selectors_2.TraverseOrder;
 var ReactiveBST = /** @class */ (function (_super) {
     __extends(ReactiveBST, _super);
     function ReactiveBST(rootValue) {
@@ -39,7 +39,7 @@ var ReactiveBST = /** @class */ (function (_super) {
         this.dispatch(new actions_1.Remove({ value: value }));
     };
     ReactiveBST.prototype.traverse$ = function (order) {
-        if (order === void 0) { order = selectors_1.TraverseOrderEnum.inorder; }
+        if (order === void 0) { order = selectors_1.TraverseOrder.inorder; }
         return this.state$.pipe(selectors_1.traverse(order));
     };
     ReactiveBST.prototype.find$ = function (value) {

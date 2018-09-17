@@ -38,15 +38,15 @@ function _traversePostOrder(node, callback) {
         return;
     _traverseOrdered(node._left, callback);
     _traverseOrdered(node._right, callback);
-    callback(node.value);
+    callback(node);
 }
 exports._traversePostOrder = _traversePostOrder;
-function _searchRecursively(_value, _node) {
-    return !_node || _node.value === _value
-        ? _node
-        : _value < _node.value
-            ? _searchRecursively(_value, _node._left)
-            : _searchRecursively(_value, _node._right);
+function _searchRecursively(value, node) {
+    return !node || node.value === value
+        ? node
+        : value < node.value
+            ? _searchRecursively(value, node._left)
+            : _searchRecursively(value, node._right);
 }
 exports._searchRecursively = _searchRecursively;
 function _findMax(node, current) {

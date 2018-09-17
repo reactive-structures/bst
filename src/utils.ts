@@ -17,36 +17,36 @@ export function _insert(value: number, current: BSTNode): BSTNode {
   return current;
 }
 
-export function _traverseOrdered(node, callback) {
+export function _traverseOrdered(node: BSTNode, callback): BSTNode {
   if (!node) return;
   _traverseOrdered(node._left, callback);
   callback(node);
   _traverseOrdered(node._right, callback);
 }
 
-export function _traversePreOrder(node, callback) {
+export function _traversePreOrder(node: BSTNode, callback): BSTNode {
   if (!node) return;
   callback(node);
   _traverseOrdered(node._left, callback);
   _traverseOrdered(node._right, callback);
 }
 
-export function _traversePostOrder(node, callback) {
+export function _traversePostOrder(node: BSTNode, callback): BSTNode {
   if (!node) return;
   _traverseOrdered(node._left, callback);
   _traverseOrdered(node._right, callback);
-  callback(node.value);
+  callback(node);
 }
 
-export function _searchRecursively(_value, _node: BSTNode): BSTNode {
-  return !_node || _node.value === _value
-    ? _node
-    : _value < _node.value
-      ? _searchRecursively(_value, _node._left)
-      : _searchRecursively(_value, _node._right);
+export function _searchRecursively(value: number, node: BSTNode): BSTNode {
+  return !node || node.value === value
+    ? node
+    : value < node.value
+      ? _searchRecursively(value, node._left)
+      : _searchRecursively(value, node._right);
 }
 
-export function _findMax(node, current?): BSTNode {
+export function _findMax(node: BSTNode, current?: BSTNode): BSTNode {
   current = current || { value: -Infinity };
   if (!node) {
     return current;
@@ -57,7 +57,7 @@ export function _findMax(node, current?): BSTNode {
   return _findMax(node._right, current);
 }
 
-export function _findMin(node, current?): BSTNode {
+export function _findMin(node: BSTNode, current?): BSTNode {
   current = current || { value: Infinity };
   if (!node) {
     return current;
@@ -68,7 +68,11 @@ export function _findMin(node, current?): BSTNode {
   return _findMin(node._left, current);
 }
 
-export function _replaceChild(parent, oldChild, newChild) {
+export function _replaceChild(
+  parent: BSTNode,
+  oldChild: BSTNode,
+  newChild: BSTNode
+) {
   if (!parent) {
     this._root = newChild;
     if (this._root !== undefined) {
@@ -86,7 +90,7 @@ export function _replaceChild(parent, oldChild, newChild) {
   }
 }
 
-export function _remove(node) {
+export function _remove(node: BSTNode): boolean {
   const replace = _replaceChild.bind(this);
 
   if (!node) {
@@ -110,14 +114,14 @@ export function _remove(node) {
   }
 }
 
-export function _getHeight(node): number {
+export function _getHeight(node: BSTNode): number {
   if (!node) {
     return 0;
   }
   return 1 + Math.max(_getHeight(node._left), _getHeight(node._right));
 }
 
-export function _getDiameter(node): number {
+export function _getDiameter(node: BSTNode): number {
   if (!node) {
     return 0;
   }

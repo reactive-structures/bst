@@ -10,12 +10,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var rxjs_1 = require("rxjs");
 var operators_1 = require("rxjs/operators");
 var utils = __importStar(require("./utils"));
-var TraverseOrderEnum;
-(function (TraverseOrderEnum) {
-    TraverseOrderEnum["inorder"] = "_traverseOrdered";
-    TraverseOrderEnum["preorder"] = "_traversePreOrder";
-    TraverseOrderEnum["postorder"] = "_traversePostOrder";
-})(TraverseOrderEnum = exports.TraverseOrderEnum || (exports.TraverseOrderEnum = {}));
+var TraverseOrder;
+(function (TraverseOrder) {
+    TraverseOrder["inorder"] = "_traverseOrdered";
+    TraverseOrder["preorder"] = "_traversePreOrder";
+    TraverseOrder["postorder"] = "_traversePostOrder";
+})(TraverseOrder = exports.TraverseOrder || (exports.TraverseOrder = {}));
 exports.traverse = function (order) {
     return rxjs_1.pipe(operators_1.map(function (state) { return state._root; }), operators_1.map(function (node) {
         var payload = [];

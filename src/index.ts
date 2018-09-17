@@ -7,12 +7,12 @@ import {
   findInTree,
   findMax,
   findMin,
-  TraverseOrderEnum,
+  TraverseOrder,
   getHeight,
   getDiameter
 } from './selectors';
 
-export { TraverseOrderEnum } from './selectors';
+export { TraverseOrder } from './selectors';
 
 export class ReactiveBST extends Store<BST> {
   public max$ = this.state$.pipe(findMax);
@@ -32,7 +32,7 @@ export class ReactiveBST extends Store<BST> {
     this.dispatch(new Remove({ value }));
   }
 
-  traverse$(order: TraverseOrderEnum = TraverseOrderEnum.inorder) {
+  traverse$(order: TraverseOrder = TraverseOrder.inorder) {
     return this.state$.pipe(traverse(order));
   }
 
