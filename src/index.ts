@@ -12,13 +12,15 @@ import {
   getDiameter
 } from './selectors';
 
+export { TraverseOrderEnum } from './selectors';
+
 export class ReactiveBST extends Store<BST> {
   public max$ = this.state$.pipe(findMax);
   public min$ = this.state$.pipe(findMin);
   public height$ = this.state$.pipe(getHeight);
   public diameter$ = this.state$.pipe(getDiameter);
 
-  constructor(public rootValue: number = 0) {
+  constructor(private rootValue: number = 0) {
     super({ _root: new BSTNode(rootValue) }, reducerMap);
   }
 

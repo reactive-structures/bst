@@ -18,6 +18,8 @@ var models_1 = require("./models");
 var reducers_1 = require("./reducers");
 var actions_1 = require("./actions");
 var selectors_1 = require("./selectors");
+var selectors_2 = require("./selectors");
+exports.TraverseOrderEnum = selectors_2.TraverseOrderEnum;
 var ReactiveBST = /** @class */ (function (_super) {
     __extends(ReactiveBST, _super);
     function ReactiveBST(rootValue) {
