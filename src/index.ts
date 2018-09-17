@@ -1,5 +1,5 @@
 import { Store } from '@reactive-redux/store';
-import { BST, BSTNode } from './models';
+import { IBST, BSTNode } from './models';
 import { reducerMap } from './reducers';
 import { Insert, Remove } from './actions';
 import {
@@ -14,7 +14,7 @@ import {
 
 export { TraverseOrder } from './selectors';
 
-export class ReactiveBST extends Store<BST> {
+export class BinarySearchTree extends Store<IBST> {
   public max$ = this.state$.pipe(findMax);
   public min$ = this.state$.pipe(findMin);
   public height$ = this.state$.pipe(getHeight);

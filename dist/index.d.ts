@@ -1,8 +1,8 @@
 import { Store } from '@reactive-redux/store';
-import { BST, BSTNode } from './models';
+import { IBST, BSTNode } from './models';
 import { TraverseOrder } from './selectors';
 export { TraverseOrder } from './selectors';
-export declare class ReactiveBST extends Store<BST> {
+export declare class BinarySearchTree extends Store<IBST> {
     private rootValue;
     max$: import("rxjs/internal/Observable").Observable<BSTNode>;
     min$: import("rxjs/internal/Observable").Observable<BSTNode>;

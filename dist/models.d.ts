@@ -1,4 +1,4 @@
-export interface BST {
+export interface IBST {
     _root: BSTNode;
 }
 export declare class BSTNode {

@@ -20,9 +20,9 @@ var actions_1 = require("./actions");
 var selectors_1 = require("./selectors");
 var selectors_2 = require("./selectors");
 exports.TraverseOrder = selectors_2.TraverseOrder;
-var ReactiveBST = /** @class */ (function (_super) {
-    __extends(ReactiveBST, _super);
-    function ReactiveBST(rootValue) {
+var BinarySearchTree = /** @class */ (function (_super) {
+    __extends(BinarySearchTree, _super);
+    function BinarySearchTree(rootValue) {
         if (rootValue === void 0) { rootValue = 0; }
         var _this = _super.call(this, { _root: new models_1.BSTNode(rootValue) }, reducers_1.reducerMap) || this;
         _this.rootValue = rootValue;
@@ -32,19 +32,19 @@ var ReactiveBST = /** @class */ (function (_super) {
         _this.diameter$ = _this.state$.pipe(selectors_1.getDiameter);
         return _this;
     }
-    ReactiveBST.prototype.insert = function (value) {
+    BinarySearchTree.prototype.insert = function (value) {
         this.dispatch(new actions_1.Insert({ value: value }));
     };
-    ReactiveBST.prototype.delete = function (value) {
+    BinarySearchTree.prototype.delete = function (value) {
         this.dispatch(new actions_1.Remove({ value: value }));
     };
-    ReactiveBST.prototype.traverse$ = function (order) {
+    BinarySearchTree.prototype.traverse$ = function (order) {
         if (order === void 0) { order = selectors_1.TraverseOrder.IN; }
         return this.state$.pipe(selectors_1.traverse(order));
     };
-    ReactiveBST.prototype.find$ = function (value) {
+    BinarySearchTree.prototype.find$ = function (value) {
         return this.state$.pipe(selectors_1.findInTree(value));
     };
-    return ReactiveBST;
+    return BinarySearchTree;
 }(store_1.Store));
-exports.ReactiveBST = ReactiveBST;
+exports.BinarySearchTree = BinarySearchTree;
