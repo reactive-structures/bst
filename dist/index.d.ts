@@ -1,16 +1,18 @@
 import { Store } from '@reactive-redux/store';
 import { IBST, BSTNode } from './models';
 import { TraverseOrder } from './selectors';
+import { Observable } from 'rxjs';
 export { TraverseOrder } from './selectors';
 export declare class BinarySearchTree extends Store<IBST> {
     private rootValue;
-    max$: import("rxjs/internal/Observable").Observable<BSTNode>;
-    min$: import("rxjs/internal/Observable").Observable<BSTNode>;
-    height$: import("rxjs/internal/Observable").Observable<number>;
-    diameter$: import("rxjs/internal/Observable").Observable<number>;
+    state$: Observable<IBST>;
+    max$: Observable<BSTNode>;
+    min$: Observable<BSTNode>;
+    height$: Observable<number>;
+    diameter$: Observable<number>;
     constructor(rootValue?: number);
     insert(value: number): void;
     delete(value: number): void;
-    traverse$(order?: TraverseOrder): import("rxjs/internal/Observable").Observable<BSTNode[]>;
-    find$(value: number): import("rxjs/internal/Observable").Observable<BSTNode>;
+    traverse$(order?: TraverseOrder): Observable<BSTNode[]>;
+    find$(value: number): Observable<BSTNode>;
 }

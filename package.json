@@ -1,6 +1,6 @@
 {
   "name": "@reactive-structures/bst",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Reactive Binary Search Tree",
   "scripts": {
     "start": "nodemon",
@@ -13,14 +13,12 @@
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^10.5.7",
-    "nodemon": "^1.18.3",
-    "ts-node": "^7.0.0",
-    "typescript": "^3.0.1"
+    "nodemon": "1.18.3",
+    "ts-node": "7.0.0",
+    "typescript": "3.0.1"
   },
   "dependencies": {
-    "@reactive-redux/store": "^1.0.30",
-    "immer": "^1.6.0",
-    "rxjs": "^6.3.2"
+    "@reactive-redux/store": "1.0.37",
+    "immer": "1.7.1"
   }
 }

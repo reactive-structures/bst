@@ -1,4 +1,4 @@
-import { Action } from '@zentropy/store';
+import { Action } from '@reactive-redux/store';
 
 export enum BstActions {
   INSERT = '[BST] Insert item',

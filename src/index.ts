@@ -11,10 +11,12 @@ import {
   getHeight,
   getDiameter
 } from './selectors';
+import { Observable } from 'rxjs';
 
 export { TraverseOrder } from './selectors';
 
 export class BinarySearchTree extends Store<IBST> {
+  public state$: Observable<IBST>;
   public max$ = this.state$.pipe(findMax);
   public min$ = this.state$.pipe(findMin);
   public height$ = this.state$.pipe(getHeight);
