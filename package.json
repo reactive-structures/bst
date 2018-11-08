@@ -1,6 +1,6 @@
 {
   "name": "@reactive-structures/bst",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Reactive Binary Search Tree",
   "scripts": {
     "start": "nodemon",
@@ -18,7 +18,7 @@
     "typescript": "3.0.1"
   },
   "dependencies": {
-    "@reactive-redux/store": "1.0.37",
+    "@reactive-redux/store": "^1.0.43",
     "immer": "1.7.1"
   }
 }
