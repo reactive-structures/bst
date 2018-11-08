@@ -20,7 +20,7 @@ exports.traverse = function (order) {
     return rxjs_1.pipe(operators_1.map(function (state) { return state._root; }), operators_1.map(function (node) {
         var payload = [];
         utils[order](node, function (v) {
-            payload.push(v);
+            payload.push(v.value);
         });
         return payload;
     }), operators_1.filter(function (v) { return !!v; }), operators_1.distinctUntilChanged());

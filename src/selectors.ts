@@ -15,7 +15,7 @@ export const traverse = (order: TraverseOrder) =>
     map(node => {
       const payload: BSTNode[] = [];
       utils[order](node, v => {
-        payload.push(v);
+        payload.push(v.value);
       });
       return payload;
     }),
