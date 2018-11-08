@@ -28,7 +28,7 @@ export class BinarySearchTree extends Store<IBST> {
     this.dispatch(new Insert({ value }));
   }
 
-  delete(value: number) {
+  remove(value: number) {
     this.dispatch(new Remove({ value }));
   }
 

@@ -33,7 +33,7 @@ var BinarySearchTree = /** @class */ (function (_super) {
     BinarySearchTree.prototype.insert = function (value) {
         this.dispatch(new actions_1.Insert({ value: value }));
     };
-    BinarySearchTree.prototype.delete = function (value) {
+    BinarySearchTree.prototype.remove = function (value) {
         this.dispatch(new actions_1.Remove({ value: value }));
     };
     BinarySearchTree.prototype.traverse$ = function (order) {

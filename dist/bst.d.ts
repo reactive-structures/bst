@@ -11,7 +11,7 @@ export declare class BinarySearchTree extends Store<IBST> {
     diameter$: Observable<number>;
     constructor(rootValue?: number);
     insert(value: number): void;
-    delete(value: number): void;
+    remove(value: number): void;
     traverse$(order?: TraverseOrder): Observable<BSTNode[]>;
     find$(value: number): Observable<BSTNode>;
 }
