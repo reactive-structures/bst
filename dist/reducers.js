@@ -20,7 +20,7 @@ var actions_1 = require("./actions");
 var utils_1 = require("./utils");
 exports.insert = immer_1.default(function (state, action) {
     state._root = utils_1._insert(action.payload.value, state._root);
-    return { _root: __assign({}, state._root) };
+    return state;
 });
 exports.remove = immer_1.default(function (state, action) {
     var remove = utils_1._remove.bind(state);

@@ -5,7 +5,7 @@ import { _insert, _remove, _searchRecursively } from './utils';
 
 export const insert = produce<IBST>((state: IBST, action: Insert) => {
   state._root = _insert(action.payload.value, state._root);
-  return { _root: { ...state._root } };
+  return state;
 });
 
 export const remove = produce<IBST>((state: IBST, action: Insert) => {
