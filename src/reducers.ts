@@ -14,7 +14,12 @@ export const remove = produce<IBST>((state: IBST, action: Insert) => {
   return { _root: { ...state._root } };
 });
 
-export const reducerMap = new Map([
-  [BstActions.INSERT, insert],
-  [BstActions.REMOVE, remove]
-]);
+export const reducerMap = {
+  [BstActions.INSERT]: insert,
+  [BstActions.REMOVE]: remove
+};
+
+// new Map([
+//   [BstActions.INSERT, insert],
+//   [BstActions.REMOVE, remove]
+// ]);

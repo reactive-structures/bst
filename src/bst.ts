@@ -1,4 +1,4 @@
-import { Store } from '@reactive-redux/store';
+import { Store, select } from '@reactive-redux/store';
 import { IBST, BSTNode } from './models';
 import { reducerMap } from './reducers';
 import { Insert, Remove } from './actions';
@@ -12,8 +12,11 @@ import {
   getDiameter
 } from './selectors';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-export class BinarySearchTree extends Store<IBST> {
+type ActionsUnion = Insert | Remove;
+
+export class BinarySearchTree extends Store<IBST, ActionsUnion> {
   public state$: Observable<IBST>;
   public max$ = this.state$.pipe(findMax);
   public min$ = this.state$.pipe(findMin);
