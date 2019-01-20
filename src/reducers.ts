@@ -1,7 +1,9 @@
-import produce from 'immer';
+import { produce, setAutoFreeze } from 'immer';
 import { IBST } from './models';
 import { Insert, BstActions } from './actions';
 import { _insert, _remove, _searchRecursively } from './utils';
+
+setAutoFreeze(false);
 
 export const insert = produce<IBST>((state: IBST, action: Insert) => {
   state._root = _insert(action.payload.value, state._root);
@@ -11,7 +13,7 @@ export const insert = produce<IBST>((state: IBST, action: Insert) => {
 export const remove = produce<IBST>((state: IBST, action: Insert) => {
   const remove = _remove.bind(state);
   remove(_searchRecursively(action.payload.value, state._root));
-  return { _root: { ...state._root } };
+  return state;
 });
 
 export const reducerMap = {

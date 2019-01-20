@@ -1,6 +1,6 @@
 {
   "name": "@reactive-structures/bst",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Reactive Binary Search Tree",
   "scripts": {
     "start": "nodemon",
